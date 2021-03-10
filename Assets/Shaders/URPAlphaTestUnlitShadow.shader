@@ -66,10 +66,10 @@
 
 			TEXTURE2D(_MainTex);
 			TEXTURE2D(_LightTex);
-
-			CBUFFER_START(UnityPerMaterial)
 			SAMPLER(sampler_MainTex);
 			SAMPLER(sampler_LightTex);
+
+			CBUFFER_START(UnityPerMaterial)
 			half4 _MainTex_ST;
 			half4 _LightTex_ST;
 			CBUFFER_END
@@ -167,9 +167,14 @@
 			};
 
 			TEXTURE2D(_MainTex);
-
-			half4 _MainTex_ST;
+			TEXTURE2D(_LightTex);
 			SAMPLER(sampler_MainTex);
+			SAMPLER(sampler_LightTex);
+
+			CBUFFER_START(UnityPerMaterial)
+			half4 _MainTex_ST;
+			half4 _LightTex_ST;
+			CBUFFER_END
 
 			Varyings vert(Attributes input)
 			{
